@@ -1,16 +1,16 @@
 <% extend("master.ejs") %>
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">List of appointment appointments</h1>
+    <h1 class="h3 mb-0 text-gray-800">Danh sách lịch khám</h1>
 
 </div>
 
 <!-- Content Row -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">List of appointment appointments</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Danh sách lịch khám</h6>
         <div class="my-3">
-            <label for="dateDoctorAppointment">Time: </label>
+            <label for="dateDoctorAppointment">Ngày: </label>
             <form method="GET" action="/doctor/manage/appointment">
                 <div class="form-row">
                     <input id="dateDoctorAppointment" name="dateDoctorAppointment" value="<%= date %>" type="text"
@@ -25,11 +25,11 @@
         <div class="table-responsive">
             <table class="table table-bordered">
                 <tr>
-                    <th>Time</th>
+                    <th>Thời gian</th>
                     <th>No</th>
-                    <th> Name</th>
-                    <th>Gender</th>
-                    <th> Action</th>
+                    <th>Họ và tên</th>
+                    <th>Giới tinh</th>
+                    <th>Thao tác</th>
                 </tr>
                 <% if(appointments['08:00 - 09:00']) { %>
                     <tr>
@@ -352,7 +352,7 @@
     <div class="modal-dialog mw-100 w-75" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Patient information</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Thông tin bệnh nhân</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -360,11 +360,11 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="form-group col-4">
-                        <label class="col-form-label text-label" for="patientName">Name:</label>
+                        <label class="col-form-label text-label" for="patientName">Tên:</label>
                         <input type="text" class="form-control" id="patientName" name="patientName">
                     </div>
                     <div class="form-group col-4">
-                        <label class="col-form-label text-label" for="patientPhone">Phone number:</label>
+                        <label class="col-form-label text-label" for="patientPhone">SĐT:</label>
                         <input type="text" class="form-control" id="patientPhone" name="patientPhone">
                     </div>
                     <div class="form-group col-4">
@@ -372,19 +372,19 @@
                         <input type="email" class="form-control" id="patientEmail" name="patientEmail">
                     </div>
                     <div class="form-group col-2">
-                        <label class="col-form-label text-label" for="patientDate">Date:</label>
+                        <label class="col-form-label text-label" for="patientDate">Ngày hẹn:</label>
                         <input type="text" class="form-control" id="patientDate" name="patientDate" readonly>
                     </div>
                     <div class="form-group col-2">
-                        <label class="col-form-label text-label" for="patientTime">Time:</label>
+                        <label class="col-form-label text-label" for="patientTime">Thời gian:</label>
                         <input type="text" class="form-control" id="patientTime" name="patientTime" readonly>
                     </div>
                     <div class="form-group col-4">
-                        <label class="col-form-label text-label" for="patientReason">Reason:</label>
+                        <label class="col-form-label text-label" for="patientReason">Lí do:</label>
                         <textarea class="form-control" name="patientReason" id="patientReason"></textarea>
                     </div>
                     <div class="form-group col-4">
-                        <label class="col-form-label text-label" for="patientAddress">Address:</label>
+                        <label class="col-form-label text-label" for="patientAddress">Địa chỉ:</label>
                         <textarea class="form-control" name="patientAddress" id="patientAddress"></textarea>
                     </div>
 
@@ -393,21 +393,21 @@
                     </div>
 
                     <div class="form-group col-6">
-                        <label class="col-form-label text-label" for="patientHistoryBreath">History of respiratory tract diseases:</label>
+                        <label class="col-form-label text-label" for="patientHistoryBreath">Tiền sử bệnh đường hô hấp:</label>
                         <textarea class="form-control" name="patientHistoryBreath" id="patientHistoryBreath"></textarea>
                     </div>
 
                     <div class="form-group col-6">
-                        <label class="col-form-label text-label" for="patientMoreInfo">Information on previous exams:</label>
+                        <label class="col-form-label text-label" for="patientMoreInfo">Thông tin về các lần khám trước:</label>
                         <textarea class="form-control" name="patientMoreInfo" id="patientMoreInfo"></textarea>
                     </div>
 
                     <div class="form-group col-12">
-                        <label class="col-form-label text-label" for="patientNote">Note:</label>
+                        <label class="col-form-label text-label" for="patientNote">Ghi chú:</label>
                         <textarea class="form-control" name="patientNote" id="patientNote"></textarea>
                     </div>
                     <div class="col-12">
-                        <div class="col-form-label text-label">Photo of previous examination:</div>
+                        <div class="col-form-label text-label">Ảnh khám lần trước:</div>
                         <div id="imageOldForms">
 
                         </div>
@@ -430,7 +430,7 @@
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" id="patient-info-tab" data-toggle="tab" href="#patientInfoTab"
-                           role="tab" aria-controls="home" aria-selected="true">Send invoice</a>
+                           role="tab" aria-controls="home" aria-selected="true">Gửi hoá đơn</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="files-send-tab" data-toggle="tab" href="#filesSendTas" role="tab"

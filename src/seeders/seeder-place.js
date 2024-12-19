@@ -1,39 +1,26 @@
-'use strict';
+"use strict";
 
 module.exports = {
-    up: (queryInterface, Sequelize) => {
+  up: (queryInterface, Sequelize) => {
+    return queryInterface.bulkInsert(
+      "Places",
+      [
+        {
+          name: "Hà Nội",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: "Thành phố Hồ Chí Minh",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+      ],
+      {}
+    );
+  },
 
-        return queryInterface.bulkInsert('Places', [
-            {
-                name: 'New York City',
-                createdAt: new Date(),
-                updatedAt: new Date()
-            },
-            {
-                name: 'Los Angeles County',
-                createdAt: new Date(),
-                updatedAt: new Date()
-            },
-            {
-                name: 'Chicago',
-                createdAt: new Date(),
-                updatedAt: new Date()
-            },
-            {
-                name: 'Childress, Texas',
-                createdAt: new Date(),
-                updatedAt: new Date()
-            },
-            {
-                name: 'Norton, Kan.',
-                createdAt: new Date(),
-                updatedAt: new Date()
-            }
-        ], {});
-
-    },
-
-    down: (queryInterface, Sequelize) => {
-        return queryInterface.bulkDelete('Places', null, {});
-    }
+  down: (queryInterface, Sequelize) => {
+    return queryInterface.bulkDelete("Places", null, {});
+  },
 };

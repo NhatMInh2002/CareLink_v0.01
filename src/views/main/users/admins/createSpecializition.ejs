@@ -1,0 +1,43 @@
+<% extend("master.ejs") %>
+    <!-- Tiêu đề trang -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Thêm mới chuyên khoa</h1>
+    </div>
+
+    <!-- Dòng nội dung -->
+    <div class="row">
+        <div class="col-10 mx-auto">
+            <form id="formCreateNewClinic" enctype="multipart/form-data">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="name">Tiêu đề</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Tên chuyên khoa">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="description">Mô tả</label>
+                    <textarea id="description" name="description" class="form-control"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="image-clinic">Cập nhật hình ảnh</label>
+                    <input type="file" id="image-clinic" accept="image/*" onchange="loadFile(event)">
+                </div>
+
+                <div class="form-group">
+                    <img class="img-preview-clinic-create d-none" id="image-preview">
+                </div>
+
+                <button type="button" class="btn btn-primary" id="createNewClinic">Lưu</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dòng nội dung -->
+    <script>
+        $(document).ready(function () {
+            $("div #collapseUtilities").addClass('show');
+            $("div #collapseUtilities").find($("#aManageClinic")).addClass("active");
+            $('.supporter-list-posts').removeClass('active');
+        })
+    </script>

@@ -1,47 +1,45 @@
-'use strict';
+"use strict";
 
 module.exports = {
-    up: (queryInterface, Sequelize) => {
-        return queryInterface.bulkInsert('Clinics', [
-            {
-                name: 'FreeD.O.M. Clinic',
-                address: '1056 SW 1st Ave, Ocala, FL 34471, United States',
-                image: 'usa-az.jpg',
-                createdAt: new Date(),
-                updatedAt: new Date()
-            },
-            {
-                name: 'Mayo Clinic Health System',
-                address: '32 N Main St, Sherburn, MN 56171, United States',
-                image: 'mayo-clinic-health-system.jpg',
-                createdAt: new Date(),
-                updatedAt: new Date()
-            },
-            {
-                name: 'USA Campbell Clinics',
-                address: ', West Hollywood, CA 90046, United States',
-                image: 'campbell-clinic.jpg',
-                createdAt: new Date(),
-                updatedAt: new Date()
-            },
-            {
-                name: 'Stanton Road Clinic',
-                address: '575 Stanton Rd, Mobile, AL 36617, United States',
-                image: 'cleveland-clinic-usa.jpg',
-                createdAt: new Date(),
-                updatedAt: new Date()
-            },
-            {
-                name: 'Health & Wellness Clinic USA',
-                address: '304, Coral Gables, FL 33134, United States',
-                image: 'clinic-Ft-McCoy.jpg',
-                createdAt: new Date(),
-                updatedAt: new Date()
-            }
-        ], {});
-    },
+  up: (queryInterface, Sequelize) => {
+    return queryInterface.bulkInsert(
+      "Clinics",
+      [
+        {
+          name: "Bệnh viện Bạch Mai",
+          address: "78 Đường Giải Phóng, Phương Mai, Đống Đa, Hà Nội, Việt Nam",
+          image: "bach-mai-hospital.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: "Bệnh viện Chợ Rẫy",
+          address:
+            "201B Nguyễn Chí Thanh, Phường 12, Quận 5, TP. Hồ Chí Minh, Việt Nam",
+          image: "cho-ray-hospital.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: "Bệnh viện Hữu nghị Việt Đức",
+          address: "40 Phủ Doãn, Hàng Bông, Hoàn Kiếm, Hà Nội, Việt Nam",
+          image: "viet-duc-hospital.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: "Phòng khám Đa khoa Quốc tế Vinmec",
+          address: "458 Minh Khai, Vĩnh Tuy, Hai Bà Trưng, Hà Nội, Việt Nam",
+          image: "vinmec-international-clinic.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+      ],
+      {}
+    );
+  },
 
-    down: (queryInterface, Sequelize) => {
-        return queryInterface.bulkDelete('Clinics', null, {});
-    }
+  down: (queryInterface, Sequelize) => {
+    return queryInterface.bulkDelete("Clinics", null, {});
+  },
 };

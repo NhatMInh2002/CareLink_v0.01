@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <title>Doctors Care</title>
+    <title>CareLink</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Bootstrap 4.3, Jquery 3.3, font-awesome 4.7, slick-slider-->
     <script src="/components/jquery/dist/jquery.min.js"></script>
+
     <link rel="stylesheet" href="/components/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/components/font-awesome/css/font-awesome.min.css">
@@ -24,25 +25,26 @@
     <!-- table of conent for detail post-->
     <link type="text/css" rel="stylesheet" href="/components/tableOfContent/jquery.tocify.css"/>
     <script src="/components/tableOfContent/jquery.tocify.min.js"></script>
-
-    <script type='text/javascript' src=<%= process.env.URL_BING_HTTPS %> async defer></script>
-
+    <script type='text/javascript' src='<%=process.env.URL_BING_HTTPS %>' async defer ></script>
 </head>
+
 <body>
 
 <%- content %>
-<div class="spacer"></div>
+<div class="spacer">
+
+</div>
+
 <footer>
     <div class="text-center">
-        <span>Copyright &copy; <a title="More info"
-                                  href="https://www.youtube.com/channel/UCHqJxLo7mKam9GKqqwr2wfA?sub_confirmation=1"
-                                  target="_blank">HaryPhamDev - Doctors Care -  2020</a></span>
+        <span>Copyright &copy; <a title="More info" target="_blank">Ngô Quang Nhật Minh - 2020607600</a></span>
     </div>
 </footer>
 
 <!--Libraries-->
 <script src="/js/homepage.js"></script>
 <script src="/js/client.js"></script>
+<script src="/js/bookingOnline.js"></script>
 <script src="/components/AlertifyJS/alertify.min.js"></script>
 
 
@@ -67,13 +69,13 @@
 
 </script>
 
-<!-- Your customer chat code -->
+<!-- Your customer chat code --> 
 <div class="fb-customerchat"
      attribution=setup_tool
      page_id=<%= process.env.PAGE_ID %>
      theme_color="#0084ff"
-     logged_in_greeting="Welcome to DoctorsCare."
-     logged_out_greeting="Welcome to DoctorsCare.">
+     logged_in_greeting="Welcome to CareLink ."
+     logged_out_greeting="Welcome to CareLink .">
 </div>
 
 </body>
